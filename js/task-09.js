@@ -6,6 +6,6 @@ document.querySelector('.change-color').addEventListener('click', onChangeColor)
 
 function onChangeColor() {
   const bgColor = getRandomHexColor();
-  document.body.style.backgroundColor = `${bgColor}`;
+  document.body.style.backgroundColor = bgColor;
   document.querySelector('span.color').textContent = bgColor;
 }

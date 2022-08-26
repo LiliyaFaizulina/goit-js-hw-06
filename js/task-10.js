@@ -8,21 +8,19 @@ document.querySelector('button[data-destroy]').addEventListener('click', destroy
 function onCreateBtnClick() {
   const amount = Number(document.querySelector('input').value);
 
-  amount ? createBoxes(amount) : alert('Change amount!');
+  amount ? createBoxes(amount) : alert('Choose count!');
 }
 
 function createBoxes(amount) {
-  let width = 20;
-  let height = 20;
+  let side = 30;
   const markup = [];
 
   for (let i = 0; i < amount; i += 1) {
-    width += 10;
-    height += 10;
     const bgColor = getRandomHexColor();
     markup.push(
-      `<div style = "width: ${width}px; height: ${width}px; background-color: ${bgColor}"></div>`
+      `<div style = "width: ${side}px; height: ${side}px; background-color: ${bgColor}"></div>`
     );
+    side += 10;
   }
 
   document.querySelector('#boxes').insertAdjacentHTML('afterbegin', markup.join(''));
